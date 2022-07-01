@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    
+
+    stages {
+        stage('Build') {
+            steps {
+
+                // Run Maven on a Unix agent.
+                bat "mvn clean package -DskipTests deploy -Dusername=hunterfan7 -Dpassword=Ashish@087 -Denvironment=Sandbox -Dmule.version=4.4.0 -Dworkers=1 -Dworker.type=Micro -Dapplication.name=hoopa-udaan-day79-pipeline -DmuleDeploy"
+
+              
+            }
+
+            
+        }
+    }
+}
