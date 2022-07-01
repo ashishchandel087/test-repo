@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b104e32c-91ab-4adc-bfb2-6317a0df1858" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hoopa-udaan-day79Flow" doc:id="08857d3e-651f-45d9-b2b0-788d7b037994" >
+		<http:listener doc:name="Listener" doc:id="7ea9f15c-c6e3-4a63-abcd-b56b4df0d3a5" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Hello There!!" doc:name="Set Payload" doc:id="176cec52-f349-4f9d-959c-7ce2d48602d5" />
+	</flow>
+</mule>
